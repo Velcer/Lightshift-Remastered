@@ -142,6 +142,13 @@
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Chat\ChatSmiley.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\DraggableWindow.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\EventSystemManager.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\Inventories\AbilityInventory.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\Inventories\PlayerInventory.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\Inventories\ShipInventory.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\Inventories\WeaponInventory.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\InventorySlot.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Inventory\InventoryTooltip.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Lifebar.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Settings\Controls\KeyItem.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Settings\Controls\SliderItem.cs" />
@@ -149,6 +156,7 @@
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Settings\Settings.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\Settings\SettingsMenu.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Hud\UIManager.cs" />
+    <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Item\ItemStack.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Module\Module.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Module\ModuleBluePrint.cs" />
     <Compile Include="Assets\Lightshift\Scenes\Game\Scripts\Module\ModuleManager.cs" />
