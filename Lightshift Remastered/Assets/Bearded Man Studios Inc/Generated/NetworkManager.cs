@@ -15,6 +15,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public GameObject[] EntityNetworkObject = null;
 		public GameObject[] ExampleProximityPlayerNetworkObject = null;
 		public GameObject[] GameManagerNetworkObject = null;
+		public GameObject[] InventoryNetworkObject = null;
 		public GameObject[] NetworkCameraNetworkObject = null;
 		public GameObject[] PlayerNetworkObject = null;
 		public GameObject[] SyncTransformNetworkObject = null;
@@ -138,6 +139,29 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						if (GameManagerNetworkObject.Length > 0 && GameManagerNetworkObject[obj.CreateCode] != null)
 						{
 							var go = Instantiate(GameManagerNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<NetworkBehavior>();
+						}
+					}
+
+					if (newObj == null)
+						return;
+						
+					newObj.Initialize(obj);
+
+					if (objectInitialized != null)
+						objectInitialized(newObj, obj);
+				});
+			}
+			else if (obj is InventoryNetworkObject)
+			{
+				MainThreadManager.Run(() =>
+				{
+					NetworkBehavior newObj = null;
+					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
+					{
+						if (InventoryNetworkObject.Length > 0 && InventoryNetworkObject[obj.CreateCode] != null)
+						{
+							var go = Instantiate(InventoryNetworkObject[obj.CreateCode]);
 							newObj = go.GetComponent<NetworkBehavior>();
 						}
 					}
@@ -308,6 +332,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<GameManagerBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<GameManagerBehavior>().networkObject = (GameManagerNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use InstantiateInventory instead, its shorter and easier to type out ;)")]
+		public InventoryBehavior InstantiateInventoryNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(InventoryNetworkObject[index]);
+			var netBehavior = go.GetComponent<InventoryBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<InventoryBehavior>().networkObject = (InventoryNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -562,6 +598,47 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<GameManagerBehavior>().networkObject = (GameManagerNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		public InventoryBehavior InstantiateInventory(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(InventoryNetworkObject[index]);
+			var netBehavior = go.GetComponent<InventoryBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<InventoryBehavior>().networkObject = (InventoryNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

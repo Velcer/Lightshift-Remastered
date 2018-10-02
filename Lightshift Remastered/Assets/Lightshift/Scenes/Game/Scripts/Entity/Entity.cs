@@ -493,11 +493,7 @@ public class Entity : EntityBehavior
     public void SetHealthBar(float health, float max) => entityUI.RefreshHealth(health, max);
     public void SetNameTag(string name) => entityUI.SetUsername(name);
 
-    public virtual void OnInit() { }
-    public override void Init(RpcArgs args)
-    {
-        OnInit();
-    }
-
+    public virtual void OnInit() => print("unhandled init");
+    public override void Init(RpcArgs args) => OnInit();
     public void SendInitRPC() => networkObject.SendRpc(RPC_INIT, Receivers.Others);
 }

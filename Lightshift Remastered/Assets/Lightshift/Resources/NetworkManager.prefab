@@ -61,6 +61,8 @@ MonoBehaviour:
   - {fileID: 1000012738253334, guid: feb25ecf90a8d8b4ab922a455249997b, type: 2}
   GameManagerNetworkObject:
   - {fileID: 1257767196386448, guid: 78610139b14648544b4ed4a334398b45, type: 2}
+  InventoryNetworkObject:
+  - {fileID: 1983695521655906, guid: a9e01d48cfd5efe40acb0ecc718dbbd6, type: 2}
   NetworkCameraNetworkObject:
   - {fileID: 139536, guid: 661f29f0c0c86fa47b6015bd602d0ac6, type: 2}
   PlayerNetworkObject:

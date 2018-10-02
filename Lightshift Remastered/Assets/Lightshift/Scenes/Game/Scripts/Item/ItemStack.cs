@@ -5,37 +5,50 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemStack : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class ItemStack : MonoBehaviour {
 
     public int id;
-    public string displayName;
-    public int amount;
 
-    [SerializeField]
-    Image displayImage;
+    public ItemMeta meta;
 
-    [SerializeField]
-    TextMeshProUGUI displayCount;
+    private Vector3 Offset = new Vector3(20, -20, 0);
 
-    [SerializeField]
-    GameObject toolTipPrefab;
-    InventoryTooltip toolTip;
-
-
-    private void ShowToolTip()
+    public void DragItem()
     {
-        if (toolTip == null)
-        {
-            toolTip = Instantiate(toolTipPrefab, transform).GetComponent<InventoryTooltip>();
-            toolTip.title.text = displayName;
-            toolTip.description.text = "Teessttt";
-        }
-        else toolTip.gameObject.SetActive(true);       
+        transform.position = Input.mousePosition + Offset;
     }
 
-    private void HideToolTip() => toolTip?.gameObject.SetActive(false);
+    public void SetItemMeta(string key, ItemAttributeObject attributeObj = null)
+    {
+        if (meta != null)
+            Destroy(meta);
 
-    public void OnPointerEnter(PointerEventData eventData) => ShowToolTip();
+        var obj = Instantiate(ItemManager.Instance.GetItem(key), transform);
+        meta = obj.GetComponent<ItemMeta>();
 
-    public void OnPointerExit(PointerEventData eventData) => HideToolTip();
+        print(meta.displayName);
+
+        var image = GetComponentInChildren<Image>();
+        if (image == null)
+            return;
+
+        image.sprite = meta.icon;
+    }
+
+    private int _amount;
+    public int Amount
+    {
+        get
+        {
+            return _amount;
+        }
+        set
+        {
+            var text = GetComponentInChildren<TextMeshProUGUI>();
+            if (text != null)
+                text.text = value.ToString();
+
+            _amount = value;
+        }
+    }
 }

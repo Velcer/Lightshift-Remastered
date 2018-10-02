@@ -9,6 +9,7 @@ public class Player : PlayerBehavior
     public string Username { get; set; }
     public string authToken { get; set; }
     public PlayerShip ship { get; set; }
+    public Inventory inventory { get; set; }
 
     protected override void NetworkStart()
     {
@@ -35,8 +36,22 @@ public class Player : PlayerBehavior
         print("Initializing player...");
         PlayerManager.Instance.CreatePlayer(this);
 
+        print("Creating Inventory...");
+        CreateInventory();
+
         print("Spawning player ship...");
         Spawn();
+    }
+
+    private void CreateInventory()
+    {
+        inventory = NetworkManager.Instance.InstantiateInventory() as Inventory;
+        inventory.networkObject.AssignOwnership(networkObject.Owner);
+
+        inventory.networkObject.onReady += (thing) => 
+        {
+
+        };
     }
 
     public override void Respawn(RpcArgs args) => Spawn();   
