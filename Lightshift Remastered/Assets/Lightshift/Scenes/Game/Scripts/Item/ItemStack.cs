@@ -46,8 +46,11 @@ public class ItemStack : MonoBehaviour {
         {
             var text = GetComponentInChildren<TextMeshProUGUI>();
             if (text != null)
-                text.text = value.ToString();
-
+            {
+                if (value == 1)
+                    text.text = "";
+                else text.text = value.ToString();
+            }
             _amount = value;
         }
     }

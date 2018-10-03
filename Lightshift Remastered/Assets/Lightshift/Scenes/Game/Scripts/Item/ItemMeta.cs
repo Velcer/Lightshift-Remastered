@@ -24,9 +24,11 @@ public class ItemMeta : MonoBehaviour {
 
     public enum ItemType
     {
+        Material,
         Equip,
-        Module,
-        Weapons,
-        Material
+        Weapon,
+        Hull,
+        Wing,
+        Engine
     }
 }

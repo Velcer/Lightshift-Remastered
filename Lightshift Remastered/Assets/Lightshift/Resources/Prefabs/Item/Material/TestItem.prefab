@@ -61,4 +61,4 @@ MonoBehaviour:
   baseShield: 0
   baseHealth: 0
   icon: {fileID: 21300000, guid: 3684b040329c2ee4b88ff1d6adff75ff, type: 3}
-  type: 3
+  type: 0

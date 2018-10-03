@@ -18,8 +18,6 @@ public class Inventory : InventoryBehavior {
 
     InventoryTooltip toolTip;
 
-    public InventorySlot selectedSlot;
-
     public ItemStack heldItemStack;
 
     private void Start()
@@ -30,7 +28,8 @@ public class Inventory : InventoryBehavior {
 
         foreach (var slot in Slots)
         {
-            slot.onClick += OnSlotClicked;
+            slot.onLeftClick += OnSlotLeftClicked;
+            slot.onRightClick += OnSlotRightClicked;
             slot.onMouseLeave += OnSlotMouseLeave;
             slot.onMouseEnter += OnSlotMouseEnter;
         }
@@ -66,6 +65,10 @@ public class Inventory : InventoryBehavior {
         AddItemToInventory("test2", 803, new ItemAttributeObject());
         AddItemToInventory("test", 60, new ItemAttributeObject());
         AddItemToInventory("test2", 300, new ItemAttributeObject());
+        AddItemToInventory("raider", 1, new ItemAttributeObject());
+        AddItemToInventory("raider", 1, new ItemAttributeObject());
+        AddItemToInventory("raider", 1, new ItemAttributeObject());
+        AddItemToInventory("raider", 1, new ItemAttributeObject());
     }
 
     private void SetItem(int slotId, string key, int amount, ItemAttributeObject attributeObj = null)
@@ -122,10 +125,14 @@ public class Inventory : InventoryBehavior {
         HideToolTip();
     }
 
-    private void OnSlotClicked(InventorySlot slot)
+    private void OnSlotLeftClicked(InventorySlot slot)
     {
-        print("we clickkkeddddd");
         networkObject.SendRpc(RPC_SLOT_LEFT_CLICKED, Receivers.Server, slot.id);
+    }
+
+    private void OnSlotRightClicked(InventorySlot slot)
+    {
+        networkObject.SendRpc(RPC_SLOT_RIGHT_CLICKED, Receivers.Server, slot.id);
     }
 
     private void ShowToolTip(ItemStack item)
@@ -136,10 +143,18 @@ public class Inventory : InventoryBehavior {
 
         toolTip.SetTitle(item.meta.displayName);
         toolTip.SetDescription(item.meta.description, true);
-        toolTip.SetDescription("+50 Health");
-        toolTip.SetDescription("+20 Shield");
-        toolTip.SetDescription("+30 Agility");
-        toolTip.SetDescription("Equippable");
+        if (item.meta.baseAcceleration != 0)
+            toolTip.SetDescription($"Acceleration: {item.meta.baseAcceleration} (+2)");
+        if (item.meta.baseSpeed != 0)
+            toolTip.SetDescription($"Max Speed: {item.meta.baseSpeed} (+0.02)");
+        if (item.meta.baseAgility != 0)
+            toolTip.SetDescription($"Agility: {item.meta.baseAcceleration} (+10)");
+        if (item.meta.baseHealth != 0)
+            toolTip.SetDescription($"Health: {item.meta.baseHealth} (+200)");
+        if (item.meta.baseShield != 0)
+            toolTip.SetDescription($"Shield: {item.meta.baseShield} (+46)");
+
+        toolTip.SetDescription($"<b>{item.meta.type.ToString()}</b>");
         toolTip.Refresh();
         toolTip.transform.position = item.transform.position + new Vector3(145, -60);
 
@@ -153,7 +168,6 @@ public class Inventory : InventoryBehavior {
         var itemKey = args.GetNext<string>();
         var amount = args.GetNext<int>();
         var byteArray = args.GetNext<byte[]>();
-        //var attributes = ItemAttributeObject.Desserialize(byteArray);
         var attributes = new ItemAttributeObject();
         SetItem(slotId, itemKey, amount, attributes);
         print("set item");
@@ -167,6 +181,18 @@ public class Inventory : InventoryBehavior {
         SetHoldingItem(itemKey, amount);
     }
 
+    private bool CanMoveToSlot(InventorySlot slot, ItemStack stack)
+    {
+        if (slot.slotType == InventorySlot.SlotType.Everything)
+            return true;
+        else
+        {
+            if (slot.slotType.ToString() == stack.meta.type.ToString())
+                return true;
+            else return false;
+        }
+    }
+
     public override void SlotRightClicked(RpcArgs args)
     {
         var slotId = args.GetNext<int>();
@@ -176,16 +202,14 @@ public class Inventory : InventoryBehavior {
 
         var itemStack = slot.itemStack;
 
-        print($"Here: {heldItemStack?.meta?.displayName}");
         // If holding an item
         if (heldItemStack != null)
         {
             //If slot is empty
             if (slot.itemStack == null)
             {
-                if (heldItemStack.Amount > 0 && slot.slotType.ToString() == heldItemStack.meta.type.ToString())
+                if (heldItemStack.Amount > 0 && CanMoveToSlot(slot, heldItemStack))
                 {
-                    itemStack.Amount++;
                     heldItemStack.Amount--;
                     SendSetItem(slot.id, heldItemStack.meta.key, 1, heldItemStack.meta.itemAttributeObject);
 
@@ -213,6 +237,19 @@ public class Inventory : InventoryBehavior {
                 }
             }
         }
+        else if (slot.itemStack != null)
+        {
+            if (slot.itemStack.Amount > 1)
+            {
+                SetHoldingItem(slot.itemStack.meta.key, slot.itemStack.Amount / 2);
+                itemStack.Amount -= slot.itemStack.Amount / 2;
+                SendSetItem(slot.id, itemStack);
+            }
+            else if (itemStack.Amount == 1){
+                SetHoldingItem(slot.itemStack.meta.key, itemStack.Amount);
+                SetSlotEmpty(slot.id);
+            }
+        }
     }
 
     public override void SlotLeftClicked(RpcArgs args)
@@ -229,7 +266,7 @@ public class Inventory : InventoryBehavior {
         {
             print("heldItem not null");
             // If the slot clicked is empty
-            if (slot.itemStack == null/* && slot.slotType.ToString() == heldItemStack.meta.type.ToString()*/)
+            if (slot.itemStack == null && CanMoveToSlot(slot, heldItemStack))
             {
                 SendSetItem(slot.id, heldItemStack);
                 SetHandEmpty();
@@ -240,7 +277,7 @@ public class Inventory : InventoryBehavior {
             {
                 print("ahh..");
                 // If held item and clicked item are the same key
-                if (slot.itemStack.meta.key == heldItemStack.meta.key)
+                if (slot.itemStack?.meta?.key == heldItemStack?.meta?.key)
                 {
                     var slotAmount = slot.itemStack.Amount;
                     var heldAmount = heldItemStack.Amount;
@@ -262,8 +299,8 @@ public class Inventory : InventoryBehavior {
                 //If they are NOT the same key, swap positions
                 else
                 {
-                    //if (slot.slotType.ToString() != heldItemStack.meta.type.ToString())
-                    //    return;
+                    if (!CanMoveToSlot(slot, heldItemStack))
+                        return;
                     SendSetItem(slot.id, heldItemStack);
                     SendHoldingItem(itemStack);
                     print("here");

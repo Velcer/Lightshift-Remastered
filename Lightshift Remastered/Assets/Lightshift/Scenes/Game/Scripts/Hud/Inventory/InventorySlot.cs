@@ -14,17 +14,20 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public enum SlotType
     {
+        Everything,
         Equip,
-        Module,
-        Weapons,
-        Material
+        Weapon,
+        Hull,
+        Wing,
+        Engine
     }
 
 
     [SerializeField]
     GameObject content;
 
-    public Action<InventorySlot> onClick;
+    public Action<InventorySlot> onLeftClick;
+    public Action<InventorySlot> onRightClick;
     public Action<InventorySlot> onMouseLeave;
     public Action<InventorySlot> onMouseEnter;
 
@@ -40,6 +43,9 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        onClick?.Invoke(this);
+        if (eventData.button == PointerEventData.InputButton.Left)
+            onLeftClick?.Invoke(this);
+        if (eventData.button == PointerEventData.InputButton.Right)
+            onRightClick?.Invoke(this);
     }
 }

@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 5
   IdStartNumber: 1100
-  slotType: 0
+  slotType: 1
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 1
   IdStartNumber: 1003
-  slotType: 1
+  slotType: 5
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 40
   IdStartNumber: 0
-  slotType: 3
+  slotType: 0
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
@@ -971,7 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 1
   IdStartNumber: 1002
-  slotType: 1
+  slotType: 4
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
@@ -1037,7 +1037,6 @@ MonoBehaviour:
     type: 2}
   itemStackPrefab: {fileID: 1884359323462942, guid: 78e5cd57304c57948b234d7393cdfeea,
     type: 2}
-  selectedSlot: {fileID: 0}
   heldItemStack: {fileID: 0}
 --- !u!114 &114522682256781472
 MonoBehaviour:
@@ -1444,7 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 1
   IdStartNumber: 1000
-  slotType: 1
+  slotType: 3
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
@@ -1603,7 +1602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotCount: 1
   IdStartNumber: 1001
-  slotType: 1
+  slotType: 4
   Slots: []
   itemSlotPrefab: {fileID: 1611355930642542, guid: c52d387691037d2448d9ff163e9e0f9c,
     type: 2}
