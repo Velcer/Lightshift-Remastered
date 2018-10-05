@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{C806D231-9376-33AD-C787-D7697FE02303}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Lightshift/Scenes/Game/Scripts/Entity/Entity.cs">
+    <Files>
+      <File FileName="Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/Settings.cs" Line="101" Column="58" />
+      <File FileName="Assets/Lightshift/Scenes/Game/Scripts/Player/Player.cs" Line="74" Column="29" />
+      <File FileName="Assets/Lightshift/Scenes/Game/Scripts/Entity/Entity.cs" Line="428" Column="36" />
+      <File FileName="Assets/Lightshift/Scenes/Game/Scripts/Camera/CameraFollow.cs" Line="28" Column="66" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

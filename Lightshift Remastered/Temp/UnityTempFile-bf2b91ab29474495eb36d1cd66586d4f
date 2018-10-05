@@ -1,0 +1,443 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:6
+-out:'Temp/Assembly-CSharp.dll'
+-nostdlib
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.BaselibModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FacebookModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.HotReloadModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.LocalizationModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ProfilerModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StreamingModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubstanceModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TLSModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TimelineModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UmbraModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/Unity.Locator.dll'
+-r:'Library/ScriptAssemblies/UnityEditor.StandardEvents.dll'
+-r:'Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll'
+-r:'Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll'
+-r:'Library/ScriptAssemblies/Unity.TextMeshPro.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll'
+-r:'Assets/Plugins/PlayerIOUnity3DClient.dll'
+-r:'Assets/Bearded Man Studios Inc/Plugins/ForgeNetworkingCommon.dll'
+-r:'Assets/Bearded Man Studios Inc/Plugins/BeardedManStudios.dll'
+-r:'/Users/akoscica/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll'
+-r:'/Users/akoscica/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/UnityScript.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/UnityScript.Lang.dll'
+-r:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll'
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_2_10
+-define:UNITY_2018_2
+-define:UNITY_2018
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITES
+-define:ENABLE_GRID
+-define:ENABLE_TILEMAP
+-define:ENABLE_TERRAIN
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_VIDEO
+-define:ENABLE_PACKMAN
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_LOCALIZATION
+-define:PLATFORM_STANDALONE_OSX
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:ENABLE_CLUSTER_SYNC
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VR
+-define:ENABLE_AR
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:NET_4_6
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+'Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/CubeForgeGame.cs'
+'Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/NetCam.cs'
+'Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/Primitive.cs'
+'Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximityPlayer.cs'
+'Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximitySpawn.cs'
+'Assets/Bearded Man Studios Inc/Generated/NetworkManager.cs'
+'Assets/Bearded Man Studios Inc/Generated/NetworkObjectFactory.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/EntityBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/EntityNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/GameManagerBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/GameManagerNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/InventoryBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/InventoryNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/PlayerBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/PlayerNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/SyncTransformBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/SyncTransformNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestBehavior.cs'
+'Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestNetworkObject.cs'
+'Assets/Bearded Man Studios Inc/Modules/Chat/ChatMaker.cs'
+'Assets/Bearded Man Studios Inc/Modules/Chat/ChatManager.cs'
+'Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyManager.cs'
+'Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayer.cs'
+'Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayerItem.cs'
+'Assets/Bearded Man Studios Inc/Modules/Stand Alone Chat/StandAloneChat.cs'
+'Assets/Bearded Man Studios Inc/Modules/VOIP/VOIP.cs'
+'Assets/Bearded Man Studios Inc/Modules/VOIP/VoipStarter.cs'
+'Assets/Bearded Man Studios Inc/Scripts/BMSUnityExtensions.cs'
+'Assets/Bearded Man Studios Inc/Scripts/InterpolateQuaternion.cs'
+'Assets/Bearded Man Studios Inc/Scripts/InterpolateVector2.cs'
+'Assets/Bearded Man Studios Inc/Scripts/InterpolateVector3.cs'
+'Assets/Bearded Man Studios Inc/Scripts/InterpolateVector4.cs'
+'Assets/Bearded Man Studios Inc/Scripts/Logging/BMSLogger.cs'
+'Assets/Bearded Man Studios Inc/Scripts/MainThreadManager.cs'
+'Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs'
+'Assets/Bearded Man Studios Inc/Scripts/NetworkBehavior.cs'
+'Assets/Bearded Man Studios Inc/Scripts/NetworkManager.cs'
+'Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactory.cs'
+'Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactoryBase.cs'
+'Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowser.cs'
+'Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowserItem.cs'
+'Assets/Bearded Man Studios Inc/Scripts/UnityObjectMapper.cs'
+'Assets/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/ParticleEffectsLibrary.cs'
+'Assets/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEButtonScript.cs'
+'Assets/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/PEDestoryTimed.cs'
+'Assets/Epic Toon FX/Demo/ParticleEffectsShowcase/Scripts/UICanvasManager.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXButtonScript.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXFireProjectile.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXLoopScript.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXMouseOrbit.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXProjectileScript.cs'
+'Assets/Epic Toon FX/Demo/Scripts/ETFXSceneManager.cs'
+'Assets/Epic Toon FX/Scripts/ETFXLightFade.cs'
+'Assets/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs'
+'Assets/Epic Toon FX/Scripts/ETFXRotation.cs'
+'Assets/InstantiateGameManager.cs'
+'Assets/Lightshift/Scenes/Authentication/LoginUI.cs'
+'Assets/Lightshift/Scenes/Game/JoinServer.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/AutoJoinServer.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Camera/CameraEffectComponent.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Camera/CameraFollow.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Camera/CameraShaker.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/AI/BaseAI.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/AI/BasicAI.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/Entities/Bosses/Trelt.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/Entities/EnemyShip.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/Entities/PlayerShip.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/Entity.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/EntityManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Entity/EntityUI.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/GameManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Chat/ChatBox.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Chat/ChatMessageItem.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Chat/ChatSmiley.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/DraggableWindow.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/EventSystemManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Inventory/Inventory.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Inventory/InventorySlot.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Inventory/InventoryTooltip.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Inventory/SlotGenerator.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Lifebar.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/Controls/KeyItem.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/Controls/SliderItem.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/Controls/ToggleItem.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/Settings.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/Settings/SettingsMenu.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Hud/UIManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Item/ItemAttributeObject.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Item/ItemManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Item/ItemMeta.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Item/ItemStack.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/Module.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/ModuleBluePrint.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/ModuleManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/Modules/Engine.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/Modules/Hull.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/Modules/Turret.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Module/Modules/Wing.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Particles/EffectFadeOut.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/InputManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/InstantiatePlayer.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/NewBehaviourScript.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/Player.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/PlayerController.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Player/PlayerManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/PrefabManager.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Util/ByteArrayConverter.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Weapon/Projectile.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Weapon/Weapon.cs'
+'Assets/Lightshift/Scenes/Game/Scripts/Weapon/Weapons/Cannon.cs'
+'Assets/Lightshift/Scenes/Game/SpaceScene/Scripts/SU_Asteroid.cs'
+'Assets/Lightshift/Scenes/Game/SpaceScene/Scripts/SU_AsteroidField.cs'
+'Assets/Lightshift/Scenes/Game/SpaceScene/Scripts/SU_SpaceParticles.cs'
+'Assets/Lightshift/Scenes/Game/SpaceScene/Scripts/SU_SpaceSceneCamera.cs'
+'Assets/Lightshift/Scenes/GameServer/Scripts/ServerInstantiator.cs'
+'Assets/Lightshift/Scenes/ServerConnector/ServerConnector.cs'
+'Assets/Lightshift/Scenes/Spawner/Scripts/SpawnerManager.cs'
+'Assets/Lightshift/Scripts/PlayerIO/Instance.cs'
+'Assets/Lightshift/Scripts/PlayerIO/Instances/AuthInstance.cs'
+'Assets/Lightshift/Scripts/PlayerIO/Instances/ServerInstance.cs'
+'Assets/Lightshift/Scripts/PlayerIO/Instances/SpawnerInstance.cs'
+'Assets/Lightshift/Scripts/PlayerIO/PlayerIOAuth.cs'
+'Assets/Lightshift/Scripts/PlayerIO/PlayerIONetwork.cs'
+'Assets/Lightshift/Scripts/SceneController.cs'
+'Assets/ThirdParty/AnySync/Examples/UNetAdvanced/UNetPlayerSync.cs'
+'Assets/ThirdParty/AnySync/Examples/UNetSimple/UNetPlayerSync2D.cs'
+'Assets/ThirdParty/AnySync/SyncBuffer.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/ColorSuite/ColorSuite.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Glitch/AnalogGlitch.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Glitch/DigitalGlitch.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Space Ship/Crosshair.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Space Ship/CustomCursor.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Space Ship/EnginePlasma.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Space Ship/ParticleFollow.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Space Ship/SpaceshipController.cs'
+'Assets/ThirdParty/SpaceJourney/Plugins/Time Control/TimeScale.cs'
+'Assets/VelcerMainMenu/Scripts/VelcerMainMenu.cs'
+-lib:'/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api'

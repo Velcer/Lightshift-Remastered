@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour {
 
-    public static KeyCode DownKey { get; set; }
-    public static KeyCode UpKey { get; set; }
-    public static KeyCode LeftKey { get; set; }
-    public static KeyCode RightKey { get; set; }
+    public static KeyCode DownKey = KeyCode.S;
+    public static KeyCode UpKey = KeyCode.W;
+    public static KeyCode LeftKey = KeyCode.A;
+    public static KeyCode RightKey = KeyCode.D;
     public static KeyCode panKey { get; set; }
     public static KeyCode ShootKey1 { get; set; }
     public static KeyCode ShootKey2 { get; set; }
@@ -43,17 +43,17 @@ public class Settings : MonoBehaviour {
         if (!PlayerPrefs.HasKey("mapKey"))
             PlayerPrefs.SetString("mapKey", "M");
 
-        if (!PlayerPrefs.HasKey("down"))
-            PlayerPrefs.SetString("down", "DownArrow");
+        //if (!PlayerPrefs.HasKey("down"))
+        //    PlayerPrefs.SetString("down", "S");
 
-        if (!PlayerPrefs.HasKey("forward"))
-            PlayerPrefs.SetString("forward", "UpArrow");
+        //if (!PlayerPrefs.HasKey("forward"))
+        //    PlayerPrefs.SetString("forward", "W");
 
-        if (!PlayerPrefs.HasKey("turnLeft"))
-            PlayerPrefs.SetString("turnLeft", "LeftArrow");
+        //if (!PlayerPrefs.HasKey("turnLeft"))
+        //    PlayerPrefs.SetString("turnLeft", "A");
 
-        if (!PlayerPrefs.HasKey("turnRight"))
-            PlayerPrefs.SetString("turnRight", "RightArrow");
+        //if (!PlayerPrefs.HasKey("turnRight"))
+            //PlayerPrefs.SetString("turnRight", "D");
 
         if (!PlayerPrefs.HasKey("shootKey"))
             PlayerPrefs.SetString("shootKey", "Space");
@@ -97,11 +97,11 @@ public class Settings : MonoBehaviour {
     public static void RefreshControls()
     {
         try
-        {
-            DownKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("down", "DownArrow"));
-            UpKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forward", "UpArrow"));
-            LeftKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnLeft", "LeftArrow"));
-            RightKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnRight", "RightArrow"));
+        { 
+            //DownKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("down", "S"));
+            //UpKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forward", "W"));
+            //LeftKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnLeft", "A"));
+            //RightKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnRight", "D"));
             ShootKey2 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey", "Space"));
             ShootKey1 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey1", "Alpha1"));
             ShootKey2 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey2", "Alpha2"));
