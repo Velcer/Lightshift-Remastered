@@ -45,17 +45,17 @@ public class Settings : MonoBehaviour {
         if (!PlayerPrefs.HasKey("mapKey"))
             PlayerPrefs.SetString("mapKey", "M");
 
-        //if (!PlayerPrefs.HasKey("down"))
-        //    PlayerPrefs.SetString("down", "S");
+        if (!PlayerPrefs.HasKey("down"))
+            PlayerPrefs.SetString("down", "DownArrow");
 
-        //if (!PlayerPrefs.HasKey("forward"))
-        //    PlayerPrefs.SetString("forward", "W");
+        if (!PlayerPrefs.HasKey("forward"))
+            PlayerPrefs.SetString("forward", "UpArrow");
 
-        //if (!PlayerPrefs.HasKey("turnLeft"))
-        //    PlayerPrefs.SetString("turnLeft", "A");
+        if (!PlayerPrefs.HasKey("turnLeft"))
+            PlayerPrefs.SetString("turnLeft", "LeftArrow");
 
-        //if (!PlayerPrefs.HasKey("turnRight"))
-            //PlayerPrefs.SetString("turnRight", "D");
+        if (!PlayerPrefs.HasKey("turnRight"))
+            PlayerPrefs.SetString("turnRight", "RightArrow");
 
         if (!PlayerPrefs.HasKey("shootKey"))
             PlayerPrefs.SetString("shootKey", "Space");
@@ -102,11 +102,11 @@ public class Settings : MonoBehaviour {
     public static void RefreshControls()
     {
         try
-        { 
-            //DownKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("down", "S"));
-            //UpKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forward", "W"));
-            //LeftKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnLeft", "A"));
-            //RightKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnRight", "D"));
+        {
+            DownKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("down", "DownArrow"));
+            UpKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forward", "UpArrow"));
+            LeftKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnLeft", "LeftArrow"));
+            RightKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("turnRight", "RightArrow"));
             ShootKey2 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey", "Space"));
             ShootKey1 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey1", "Alpha1"));
             ShootKey2 = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey2", "Alpha2"));

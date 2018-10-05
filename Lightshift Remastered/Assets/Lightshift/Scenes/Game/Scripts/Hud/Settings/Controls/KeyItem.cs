@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +9,9 @@ public class KeyItem : MonoBehaviour {
 
     public string saveCode;
     public string keyCode;
-    public Text label;
+    public TextMeshProUGUI label;
     public Button btn;
-    public Text btnText;
+    public TextMeshProUGUI btnText;
 
     private DateTime lastKeyAssign;
 

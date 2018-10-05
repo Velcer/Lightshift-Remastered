@@ -69,8 +69,8 @@ public class Player : PlayerBehavior
         {
             ModuleBluePrint hull = new ModuleBluePrint
             {
-                Id = 0,
-                key = "defaultHull",
+                Id = 1000,
+                key = "testHull",
                 flipped = false,
                 health = 850,
                 shield = 250,
@@ -79,8 +79,8 @@ public class Player : PlayerBehavior
 
             ModuleBluePrint rightWing = new ModuleBluePrint
             {
-                Id = 1,
-                key = "defaultWing",
+                Id = 1002,
+                key = "testWing",
                 flipped = true,
                 agility = 2,
                 shield = 250,
@@ -90,8 +90,8 @@ public class Player : PlayerBehavior
 
             ModuleBluePrint leftWing = new ModuleBluePrint
             {
-                Id = 2,
-                key = "defaultWing",
+                Id = 1001,
+                key = "testWing",
                 agility = 4,
                 shield = 250,
                 health = 50,
@@ -100,8 +100,8 @@ public class Player : PlayerBehavior
 
             ModuleBluePrint engine = new ModuleBluePrint
             {
-                Id = 3,
-                key = "carbideEngine",
+                Id = 1003,
+                key = "defaultEngine",
                 shield = 100,
                 health = 50,
                 acceleration = 0.055f,
@@ -144,7 +144,7 @@ public class Player : PlayerBehavior
             if (message.Length > 250)
                 message.Substring(message.Length - 250);
 
-            string format = $"<size=16>{Username}</size>: {message}";
+            string format = $"<b>{Username}</b>: {message}";
             ChatBox.Instance.AddMessage(format);
 
             networkObject.SendRpc(RPC_CHAT, Receivers.Others, format);

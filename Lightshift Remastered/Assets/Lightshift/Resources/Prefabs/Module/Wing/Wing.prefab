@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a26176f5919a7d4491166a9a795d436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: defaultWing
+  key: testWing
   flipped: 0
   Id: 0
   offset: {x: 0, y: 0, z: 0}

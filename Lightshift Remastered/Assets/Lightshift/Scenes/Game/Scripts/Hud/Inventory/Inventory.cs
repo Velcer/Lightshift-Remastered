@@ -53,7 +53,7 @@ public class Inventory : InventoryBehavior {
         if (networkObject != null && networkObject.IsOwner && heldItemStack !=null)
             heldItemStack.DragItem();
 
-        if (networkObject !=null && networkObject.IsOwner && Input.GetKeyDown(Settings.InventoryKey))
+        if (networkObject !=null && networkObject.IsOwner && Input.GetKeyDown(Settings.InventoryKey) && !Settings.KeysLocked)
         {
             ToggleInventory();
         }
@@ -71,20 +71,14 @@ public class Inventory : InventoryBehavior {
 
         AddItemToInventory("test", 25, new ItemAttributeObject());
         AddItemToInventory("test2", 13, new ItemAttributeObject());
-        AddItemToInventory("test", 30, new ItemAttributeObject());
-        AddItemToInventory("test2", 30, new ItemAttributeObject());
-        AddItemToInventory("test", 80, new ItemAttributeObject());
-        AddItemToInventory("test2", 130, new ItemAttributeObject());
-        AddItemToInventory("test", 3, new ItemAttributeObject());
-        AddItemToInventory("test2", 300, new ItemAttributeObject());
-        AddItemToInventory("test", 25, new ItemAttributeObject());
-        AddItemToInventory("test2", 803, new ItemAttributeObject());
-        AddItemToInventory("test", 60, new ItemAttributeObject());
-        AddItemToInventory("test2", 300, new ItemAttributeObject());
-        AddItemToInventory("raider", 1, new ItemAttributeObject());
-        AddItemToInventory("raider", 1, new ItemAttributeObject());
-        AddItemToInventory("raider", 1, new ItemAttributeObject());
-        AddItemToInventory("raider", 1, new ItemAttributeObject());
+        AddItemToInventory("testHull", 1, new ItemAttributeObject());
+        AddItemToInventory("testHull2", 1, new ItemAttributeObject());
+        AddItemToInventory("carbideEngine", 1, new ItemAttributeObject());
+        AddItemToInventory("defaultEngine", 1, new ItemAttributeObject());
+        AddItemToInventory("testWing", 1, new ItemAttributeObject());
+        AddItemToInventory("testWing2", 1, new ItemAttributeObject());
+        AddItemToInventory("testWing", 1, new ItemAttributeObject());
+        AddItemToInventory("testWing2", 1, new ItemAttributeObject());
     }
 
     private void SetItem(int slotId, string key, int amount, ItemAttributeObject attributeObj = null)
@@ -127,6 +121,11 @@ public class Inventory : InventoryBehavior {
         itemStack.SetItemMeta(key);
 
         heldItemStack = itemStack;
+    }
+
+    public Player getPlayer()
+    {
+        return PlayerManager.Instance.Players.First(p => p.networkObject.Owner.NetworkId == networkObject.Owner.NetworkId);
     }
 
     private void OnSlotMouseEnter(InventorySlot slot)
@@ -185,6 +184,39 @@ public class Inventory : InventoryBehavior {
         var byteArray = args.GetNext<byte[]>();
         var attributes = new ItemAttributeObject();
         SetItem(slotId, itemKey, amount, attributes);
+
+        if (networkObject.IsServer)
+        {
+            var slot = Slots.First(s => s.id == slotId);
+            if (slot == null)
+                return;
+
+            if (slot.slotType == InventorySlot.SlotType.Engine || slot.slotType == InventorySlot.SlotType.Weapon || slot.slotType == InventorySlot.SlotType.Hull || slot.slotType == InventorySlot.SlotType.Wing)
+            {
+                var item = ItemManager.Instance.GetItem(itemKey);
+                if (item == null)
+                    return;
+
+                var meta = item.GetComponent<ItemMeta>();
+
+                var bluePrint = new ModuleBluePrint
+                {
+                    key = itemKey,
+                    Id = slot.id,
+                    acceleration = meta.baseAcceleration + attributes.acceleration,
+                    speed = meta.baseSpeed + attributes.speed,
+                    agility = meta.baseAgility + attributes.agility,
+                    health = meta.baseHealth + attributes.health,
+                    shield = meta.baseShield + attributes.shield,
+                };
+
+                if (slot.id == 1002)
+                    bluePrint.flipped = true;
+
+                getPlayer().ship.SetModule(bluePrint);
+            }
+
+        }
     }
 
     public override void SetHeldItem(RpcArgs args)
