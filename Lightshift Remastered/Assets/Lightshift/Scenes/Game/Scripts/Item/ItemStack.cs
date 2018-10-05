@@ -26,8 +26,6 @@ public class ItemStack : MonoBehaviour {
         var obj = Instantiate(ItemManager.Instance.GetItem(key), transform);
         meta = obj.GetComponent<ItemMeta>();
 
-        print(meta.displayName);
-
         var image = GetComponentInChildren<Image>();
         if (image == null)
             return;

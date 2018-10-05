@@ -422,12 +422,13 @@ public class Entity : EntityBehavior
 
         if (networkObject.IsServer)
         {
+            _rigidbody.AddTorque(Vector3.forward * HorizontalInput * Agility * Time.deltaTime, ForceMode.Impulse);
             /* Handle Rotation */
-            Quaternion rotation = _rigidbody.rotation * Quaternion.Euler(0, 0, HorizontalInput * Agility * Time.fixedDeltaTime);
-            _rigidbody.MoveRotation(rotation);
+            Quaternion rotation = _rigidbody.rotation * Quaternion.Euler(0, 0, HorizontalInput * Agility * Time.deltaTime);
+            //_rigidbody.MoveRotation(rotation);
 
             /* Handle Movement */
-            _rigidbody.AddForce((rotation * Vector3.up) * VerticalInput * 1000.0f * Acceleration * Time.fixedDeltaTime);
+            _rigidbody.AddForce((rotation * Vector3.up) * VerticalInput * 1000.0f * Acceleration * Time.deltaTime);
 
             if (_rigidbody.velocity.magnitude > Speed * 1000.0f)
                 _rigidbody.velocity = _rigidbody.velocity.normalized * Speed * 1000.0f;

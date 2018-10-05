@@ -20,6 +20,11 @@ public class Inventory : InventoryBehavior {
 
     public ItemStack heldItemStack;
 
+    private void Awake()
+    {
+        ToggleInventory();
+    }
+
     private void Start()
     {
         var generators = GetComponentsInChildren<SlotGenerator>();
@@ -45,8 +50,19 @@ public class Inventory : InventoryBehavior {
 
     private void Update()
     {
-        if (networkObject.IsOwner && heldItemStack !=null)
-            heldItemStack?.DragItem();
+        if (networkObject != null && networkObject.IsOwner && heldItemStack !=null)
+            heldItemStack.DragItem();
+
+        if (networkObject !=null && networkObject.IsOwner && Input.GetKeyDown(Settings.InventoryKey))
+        {
+            ToggleInventory();
+        }
+    }
+
+    public void ToggleInventory()
+    {
+        var canvas = GetComponent<Canvas>();
+        canvas.enabled = !canvas.enabled;
     }
 
     IEnumerator AddItems()
@@ -82,7 +98,6 @@ public class Inventory : InventoryBehavior {
             Destroy(slot.itemStack.gameObject);
         }
 
-        print($"We're checking key {key}");
         if (key == "" || key == " ")
             return;
 
@@ -170,7 +185,6 @@ public class Inventory : InventoryBehavior {
         var byteArray = args.GetNext<byte[]>();
         var attributes = new ItemAttributeObject();
         SetItem(slotId, itemKey, amount, attributes);
-        print("set item");
     }
 
     public override void SetHeldItem(RpcArgs args)
@@ -264,18 +278,15 @@ public class Inventory : InventoryBehavior {
         // If holding an item
         if (heldItemStack != null)
         {
-            print("heldItem not null");
             // If the slot clicked is empty
             if (slot.itemStack == null && CanMoveToSlot(slot, heldItemStack))
             {
                 SendSetItem(slot.id, heldItemStack);
                 SetHandEmpty();
-                print("Should have placed");
             }
             // If the slot clicked is NOT empty
             else
             {
-                print("ahh..");
                 // If held item and clicked item are the same key
                 if (slot.itemStack?.meta?.key == heldItemStack?.meta?.key)
                 {
@@ -303,7 +314,6 @@ public class Inventory : InventoryBehavior {
                         return;
                     SendSetItem(slot.id, heldItemStack);
                     SendHoldingItem(itemStack);
-                    print("here");
                 }
             }
         }

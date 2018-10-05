@@ -22,10 +22,12 @@ public class Settings : MonoBehaviour {
     public static KeyCode MapKey { get; set; }
     public static KeyCode SettingsMenuKey { get; set; }
     public static KeyCode PlayerMenuKey { get; set; }
+    public static KeyCode InventoryKey { get; set; }
     public static KeyCode ShootKey { get; set; }
     public static bool MouseAim { get; set; }
     public static bool KeysLocked { get; set; }
     public static bool FireWithWeaponHotKeys { get; set; }
+
     void Start()
     {
         SetupControls();
@@ -88,6 +90,9 @@ public class Settings : MonoBehaviour {
         if (!PlayerPrefs.HasKey("settingsMenuKey"))
             PlayerPrefs.SetString("settingsMenuKey", "H");
 
+        if (!PlayerPrefs.HasKey("inventoryKey"))
+            PlayerPrefs.SetString("inventoryKey", "I");
+
         if (!PlayerPrefs.HasKey("playerMenuKey"))
             PlayerPrefs.SetString("playerMenuKey", "P");
 
@@ -115,6 +120,7 @@ public class Settings : MonoBehaviour {
             MapKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("mapKey", "M"));
             SettingsMenuKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("settingsMenuKey", "H"));
             PlayerMenuKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("playerMenuKey", "P"));
+            InventoryKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("inventoryKey", "I"));
             MouseAim = Boolean.Parse(PlayerPrefs.GetString("mouseAim", "False"));
             FireWithWeaponHotKeys = Boolean.Parse(PlayerPrefs.GetString("weaponHotkeys", "True"));
 
