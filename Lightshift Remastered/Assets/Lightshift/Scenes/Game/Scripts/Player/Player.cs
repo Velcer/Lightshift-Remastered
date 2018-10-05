@@ -33,13 +33,13 @@ public class Player : PlayerBehavior
 
     public override void Init(RpcArgs args)
     {
-        print("Initializing player...");
+        //Add player to list
         PlayerManager.Instance.CreatePlayer(this);
 
-        print("Creating Inventory...");
+        //Create inventory
         CreateInventory();
 
-        print("Spawning player ship...");
+        //Spawn ship
         Spawn();
     }
 
@@ -50,7 +50,7 @@ public class Player : PlayerBehavior
 
         inventory.networkObject.onReady += (thing) => 
         {
-
+            //Add items here
         };
     }
 
@@ -82,7 +82,7 @@ public class Player : PlayerBehavior
                 Id = 1,
                 key = "defaultWing",
                 flipped = true,
-                agility = 20,
+                agility = 2,
                 shield = 250,
                 health = 50,
             };
@@ -92,7 +92,7 @@ public class Player : PlayerBehavior
             {
                 Id = 2,
                 key = "defaultWing",
-                agility = 20,
+                agility = 4,
                 shield = 250,
                 health = 50,
             };
@@ -101,7 +101,7 @@ public class Player : PlayerBehavior
             ModuleBluePrint engine = new ModuleBluePrint
             {
                 Id = 3,
-                key = "defaultEngine",
+                key = "carbideEngine",
                 shield = 100,
                 health = 50,
                 acceleration = 0.055f,
